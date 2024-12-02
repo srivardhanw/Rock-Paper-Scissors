@@ -26,7 +26,6 @@ startInverval();
 const determineWinner = (playerChoice, computerChoice) => {
     reset.style.display = "block";
     if (playerChoice == computerChoice) {
-        console.log(playerChoice, computerChoice);
         return "It's a Draw!";
     }
     else if (playerChoice == '1' && computerChoice == '0' || // paper, rock
@@ -62,14 +61,22 @@ const handleClickEvent = async (e) => {
 
     const msg = determineWinner(playerChoice, computerChoice);
     result.innerHTML = msg;
+    console.log(msg);
+    if(msg == "It's a Draw!"){
+        result.style.color = "grey";
+    }
+    else if(msg == "You Win!!"){
+        result.style.color = "#AAFF00";
+    }
+    else{
+        result.style.color = "#EE4B2B";
+    }
 
     rock.removeEventListener('click', handleClickEvent);
     paper.removeEventListener('click', handleClickEvent);
     scissors.removeEventListener('click', handleClickEvent);
 
 }
-
-
 
 rock.addEventListener('click', handleClickEvent);
 paper.addEventListener('click', handleClickEvent);
