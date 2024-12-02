@@ -34,11 +34,7 @@ span {
 }
 
 #computer {
-    transform: rotate(-90deg);
-}
-
-#human {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
 }
 
 #reset {
@@ -117,6 +113,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 50px;
     margin: 3rem;
 }
